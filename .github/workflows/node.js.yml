@@ -28,6 +28,7 @@ jobs:
       - name: Build and start the backend
         run: |
           cd backend
+          npm ci
           npm run build
           node index.js
 
