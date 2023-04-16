@@ -11,7 +11,8 @@
   "type": "module",
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
