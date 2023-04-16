@@ -41,3 +41,9 @@ jobs:
         run: |
           cd client
           npm run build
+
+      # Copy client build to backend public folder
+      - name: Copy client build
+        run: |
+          cd client
+          cp -r build/* ../backend/public/
