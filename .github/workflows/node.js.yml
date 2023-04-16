@@ -46,4 +46,4 @@ jobs:
       - name: Copy client build
         run: |
           cd client
-          cp -r build/* ../backend/public/
+          cp -r build/* ../backend/
