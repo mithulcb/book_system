@@ -24,12 +24,11 @@ jobs:
           cd backend
           npm install
 
-      # Build and start the backend server
-      - name: Build and start the backend
+      # Start the backend server
+      - name: Start the backend
         run: |
           cd backend
-          npm run build
-          node index.js
+          node index.js &
 
       # Install dependencies for the client
       - name: Install dependencies for the client
