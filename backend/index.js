@@ -3,13 +3,9 @@ import mysql from "mysql";
 import cors from "cors";
 
 const app = express();
-app.use(cors({
-  origin : "*",
-}));
+app.use(cors());
 app.use(express.json());
-let corsoption = {
-  origin: [ '*' ] 
-}
+
 
 const db = mysql.createConnection({
   host: "0.0.0.0",
@@ -18,7 +14,7 @@ const db = mysql.createConnection({
   database: "test1",
 });
 
-app.get("/",cors(corsoption), (req, res) => {
+app.get("/", (req, res) => {
   res.json("hello");
 });
 
@@ -33,7 +29,7 @@ app.get("/books", (req, res) => {
   });
 });
 
-app.post("/books", cors(corsoption),(req, res) => {
+app.post("/books",(req, res) => {
   const q = "INSERT INTO books(`title`, `desc`, `price`, `cover`) VALUES (?)";
 
   const values = [
