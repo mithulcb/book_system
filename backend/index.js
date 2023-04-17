@@ -7,7 +7,7 @@ app.use(cors({
   origin : "*",
 }));
 app.use(express.json());
-corsoption = {
+let corsoption = {
   origin: [ '*' ] 
 }
 
