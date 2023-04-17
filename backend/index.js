@@ -3,7 +3,9 @@ import mysql from "mysql";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://ec2-13-232-44-46.ap-south-1.compute.amazonaws.com'
+}));
 app.use(express.json());
 
 const db = mysql.createConnection({
