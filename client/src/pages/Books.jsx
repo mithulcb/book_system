@@ -10,7 +10,7 @@ const Books = () => {
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
-        const res = await axios.get("/books");
+        const res = await axios.get("localhost:8800/books");
         setBooks(res.data);
       } catch (err) {
         console.log(err);
@@ -23,7 +23,7 @@ const Books = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/books/${id}`);
+      await axios.delete(`localhost:8800/books/${id}`);
       window.location.reload()
     } catch (err) {
       console.log(err);
@@ -43,7 +43,7 @@ const Books = () => {
             <button className="delete" onClick={() => handleDelete(book.id)}>Delete</button>
             <button className="update">
               <Link
-                to={`/update/${book.id}`}
+                to={`localhost:8800/update/${book.id}`}
                 style={{ color: "inherit", textDecoration: "none" }}
               >
                 Update
